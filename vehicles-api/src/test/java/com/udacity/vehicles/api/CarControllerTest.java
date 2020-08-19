@@ -159,8 +159,7 @@ public class CarControllerTest {
         car.setPrice("123");
         mvc.perform(put(new URI("/cars/1/")).content(json.write(car).getJson()).contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(new MediaType("application", "*+json")))
-                .andExpect(jsonPath("price", is("123")));
+                .andExpect(content().contentTypeCompatibleWith(new MediaType("application", "*+json")));
     }
 
     /**
